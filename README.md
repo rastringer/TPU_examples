@@ -85,5 +85,7 @@ tensor([[-0.2121,  1.5589, -0.6951],
 
 ### Notebooks
 
+(With thanks to Meta for the colabs [here](https://github.com/pytorch/xla/tree/master/contrib/colab), a mix of which I refactored for these examples).
+
 Now we're ready to run some notebooks. Learn how the basics of the pytorch_xla library while training a model on a single TPU core in [pytorch_resnet_singlecore.ipynb](https://github.com/rastringer/TPU_examples/blob/main/pytorch_mnist_singlecore.ipynb).
 Move on to writing a multi-core training job in [pytorch_resnet_multicore.ipynb](https://github.com/rastringer/TPU_examples/blob/main/pytorch_mnist_multicorecore.ipynb).
