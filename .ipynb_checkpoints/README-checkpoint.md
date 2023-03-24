@@ -5,7 +5,11 @@ Why use TPUs?
 
 ![TPU Architecture](https://cloud.google.com/static/tpu/docs/images/image4_5pfb45w.gif)
 
+Google designed Cloud TPUs as a matrix processor focused making training and inference of neural networks faster, and more power efficient. The TPU is built for massive matrix processing, and its systolic array architecture assigns thousands of interconnected multiply-accumulators to the task. Cloud TPU v3, contain two systolic arrays of 128 x 128 ALUs, on a single processor. For workloads bound by matmul, TPU can generate significant efficiencies.
+
 ### Getting started
+
+(If you're already up and running with a TPU VM, skip ahead to the Notebooks section).
 
 The easiest way to experiment with TPUs is to do so for free on Colab. Simply switch the `Runtime` to `TPU`.
 For more demanding workloads or experimentation, the next step is to set up a TPU VM on Google Cloud. The VM has advantages over the TPU Node, namely the ability to SSH into the VM with root access, making available training logs, debugging etc.
@@ -78,3 +82,8 @@ tensor([[-0.2121,  1.5589, -0.6951],
         [-0.7886, -0.2022,  0.9242],
         [ 0.8555, -1.8698,  1.4333]], device='xla:1')
 ```
+
+### Notebooks
+
+Now we're ready to run some notebooks. Learn how the basics of the pytorch_xla library while training a model on a single TPU core in [pytorch_resnet_singlecore.ipynb](https://github.com/rastringer/TPU_examples/blob/main/pytorch_mnist_singlecore.ipynb).
+Move on to writing a multi-core training job in [pytorch_resnet_multicore.ipynb](https://github.com/rastringer/TPU_examples/blob/main/pytorch_mnist_multicorecore.ipynb).
