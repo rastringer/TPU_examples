@@ -5,9 +5,6 @@ Why use TPUs?
 
 ![TPU Architecture](https://cloud.google.com/static/tpu/docs/images/image4_5pfb45w.gif)
 
-Google designed Cloud TPUs as a matrix processor focused making training and inference of neural networks faster, and more power efficient. The TPU is built for massive matrix processing, and its systolic array architecture 
-primary task for TPUs is matrix processing, which is a combination of multiply and accumulate operations. TPUs contain thousands of multiply-accumulators that are directly connected to each other to form a large physical matrix. This is called a systolic array architecture. Cloud TPU v3, contain two systolic arrays of 128 x 128 ALUs, on a single processor.
-
 ### Getting started
 
 The easiest way to experiment with TPUs is to do so for free on Colab. Simply switch the `Runtime` to `TPU`.
