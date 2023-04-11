@@ -59,13 +59,30 @@ From one of the options above (Workbench, local terminal, Compute Engine VM etc)
 gcloud compute tpus tpu-vm ssh <your-tpu-vm-name> --zone <your-zone>
 ```
 
-Configure the Torch-XLA environment.
+#### Configure the Torch-XLA environment.
+
+By checking `Compute Engine` -> `TPUs` in the GCP console you'll find the TPU VM ip address. Copy this into the command below:
 
 ```
-export XRT_TPU_CONFIG="localservice;0;localhost:51011"
+export TPU_IP_ADDRESS=ip-address; \
+export XRT_TPU_CONFIG="tpu_worker;0;$TPU_IP_ADDRESS:8470"
 ```
 
-Perform a simple calculation:
+Paste and run the above command in the terminal when logged into the VM.
+
+#### Set TPU runtime configuration
+
+GCP recommends PJRT in the absence of reason to use XRT.
+
+```
+export PJRT_DEVICE=TPU
+```
+
+#### Test 
+
+Perform a simple calculation.
+Copy the following code into a file named test.py:
+
 ```
 import torch
 import torch_xla.core.xla_model as xm
@@ -74,6 +91,12 @@ dev = xm.xla_device()
 t1 = torch.randn(3,3,device=dev)
 t2 = torch.randn(3,3,device=dev)
 print(t1 + t2)
+```
+
+And run:
+
+```
+python3 test.py
 ```
 
 The result should look like this:
