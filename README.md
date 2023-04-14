@@ -1,4 +1,4 @@
-# TPU Examples (Work in progress)
+# TPU Examples 
 Example notebooks for machine learning on TPUs
 
 Why use TPUs?
